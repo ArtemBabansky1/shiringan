@@ -69,6 +69,7 @@
 .btn {
   background: transparent;
   border: 1px solid var(--border-bright);
+  border-radius: var(--radius-block);
   color: var(--text-bone);
   font-family: var(--font-body);
   font-size: 11px;

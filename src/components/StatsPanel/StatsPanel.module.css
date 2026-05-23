@@ -7,13 +7,6 @@
   position: relative;
 }
 
-.panel::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 30px; height: 1px;
-  background: var(--red-sharingan);
-}
 
 .header {
   margin-bottom: 10px;
@@ -88,6 +81,7 @@
   height: 8px;
   background: var(--bg-elev);
   border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
   overflow: hidden;
 }
 
@@ -97,6 +91,7 @@
   background: linear-gradient(90deg, color-mix(in srgb, var(--stat-color) 60%, transparent), var(--stat-color));
   box-shadow: 0 0 8px var(--stat-color);
   transition: width 0.1s;
+  border-radius: var(--radius-block);
 }
 
 .statFill::after {

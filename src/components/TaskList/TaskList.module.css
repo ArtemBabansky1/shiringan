@@ -12,21 +12,6 @@
 
 .block::-webkit-scrollbar { display: none; }
 
-.block::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 30px; height: 1px;
-  background: var(--red-sharingan);
-}
-
-.block::after {
-  content: '';
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 30px; height: 1px;
-  background: var(--red-sharingan);
-}
 
 .header {
   display: flex;

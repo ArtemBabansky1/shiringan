@@ -3,6 +3,7 @@ import { useApp } from '../../context/AppContext.jsx';
 import { dateForDay, WEEKDAY_RU, formatDate } from '../../lib/dates.js';
 import { maxPointsForDay, pointsForDay } from '../../lib/statsEngine.js';
 import { WEEK_SCHEDULE } from '../../data/schedule.js';
+import { DAY_NAMES } from '../../data/dayNames.js';
 import styles from './DayGrid.module.css';
 
 const DayCell = memo(function DayCell({ dayIdx, isMobile, style }) {
@@ -46,6 +47,7 @@ const DayCell = memo(function DayCell({ dayIdx, isMobile, style }) {
       style={{ zIndex: isToday ? 100 : Math.max(1, 50 - row), ...style }}
     >
       <div className={styles.dayNum}>{dayIdx + 1}</div>
+      <div className={styles.dayName}>{DAY_NAMES[dayIdx]}</div>
       <div className={styles.dayDots}>
         {tasks.map(t => (
           <span
