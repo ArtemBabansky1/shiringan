@@ -138,11 +138,13 @@ export default function App() {
   useSounds();
 
   return (
-    <div className={styles.app}>
+    <>
       <ParticlesBackground />
-      <Header />
-      {isMobile ? <MobileLayout /> : <DesktopLayout />}
-      <Toast />
-    </div>
+      <div className={styles.app}>
+        <Header />
+        {isMobile ? <MobileLayout /> : <DesktopLayout />}
+        <Toast />
+      </div>
+    </>
   );
 }

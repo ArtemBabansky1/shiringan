@@ -82,6 +82,7 @@
   width: 18px;
   height: 18px;
   border: 1.5px solid var(--text-mute);
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
