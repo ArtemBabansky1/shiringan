@@ -1,0 +1,176 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.sharinganWrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.sharinganWrap::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(circle, var(--red-glow) 0%, transparent 65%);
+  filter: blur(8px);
+  animation: chakraPulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+.rinneMode::before {
+  background: radial-gradient(circle, var(--purple-glow) 0%, transparent 65%);
+}
+
+.finalMode::before {
+  background: radial-gradient(circle, var(--red-glow) 0%, rgba(212,160,23,0.35) 40%, transparent 70%);
+  animation: chakraPulse 1.8s ease-in-out infinite;
+}
+
+.sharinganSvg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 18px var(--red-glow));
+}
+
+.rinneMode .sharinganSvg {
+  filter: drop-shadow(0 0 18px var(--purple-glow));
+}
+
+.stageInfo {
+  text-align: center;
+}
+
+.stageNameJp {
+  font-family: var(--font-jp);
+  font-size: 13px;
+  color: var(--red-sharingan);
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+.stageName {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-bone);
+}
+
+.progressBlock {
+  width: 100%;
+}
+
+.stageMarkers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 4px;
+  margin-bottom: 8px;
+  height: 32px;
+}
+
+.stageMarker {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  cursor: help;
+  opacity: 0.32;
+  transition: all 0.4s ease;
+  filter: grayscale(0.6);
+}
+
+.stageMarker.achieved {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px var(--red-glow));
+  transform: scale(1.05);
+}
+
+.stageMarker.current {
+  filter: drop-shadow(0 0 8px var(--red-glow));
+  animation: currentPulse 1.6s ease-in-out infinite;
+}
+
+.stageMarker svg { width: 100%; height: 100%; }
+
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-elev);
+  border: 1px solid var(--border-bright);
+  padding: 3px 7px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.stageMarker:hover .tooltip { opacity: 1; }
+
+.progressTrack {
+  position: relative;
+  height: 6px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border-dim);
+}
+
+.progressFill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--red-blood) 0%, var(--red-sharingan) 60%, var(--red-flame) 100%);
+  box-shadow: 0 0 10px var(--red-glow);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progressFill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: -2px; bottom: -2px;
+  width: 4px;
+  background: var(--red-flame);
+  box-shadow: 0 0 12px var(--red-flame);
+}
+
+.progressFill.rinne {
+  background: linear-gradient(90deg, var(--red-blood) 0%, var(--purple-rinne) 70%, #c084fc 100%);
+  box-shadow: 0 0 12px var(--purple-glow);
+}
+
+.progressPercent {
+  margin-top: 6px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-mute);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.progressPercent strong {
+  color: var(--text-bone);
+  font-weight: 700;
+}
+
+.stageFlash {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,45,45,0.6) 0%, rgba(139,10,10,0.3) 50%, transparent 70%);
+  z-index: 9999;
+  pointer-events: none;
+  animation: stageFlash 0.9s ease-out forwards;
+}

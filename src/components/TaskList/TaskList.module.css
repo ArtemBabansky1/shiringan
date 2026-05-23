@@ -1,0 +1,141 @@
+.block {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  padding: 12px 14px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 30px; height: 1px;
+  background: var(--red-sharingan);
+}
+
+.block::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 30px; height: 1px;
+  background: var(--red-sharingan);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed var(--border-dim);
+}
+
+.date {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-bone);
+}
+
+.dayNum {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--red-sharingan);
+  font-variant-numeric: tabular-nums;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.empty {
+  text-align: center;
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--text-mute);
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* ── TaskRow ── */
+.taskRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-dim);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  user-select: none;
+  position: relative;
+}
+
+.taskRow:hover {
+  border-color: var(--red-blood);
+  background: var(--bg-elev);
+  transform: translateX(2px);
+}
+
+.taskRow.locked { opacity: 0.5; cursor: not-allowed; }
+.taskRow.locked:hover { border-color: var(--border-dim); background: var(--bg-deep); transform: none; }
+
+.taskCheck {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--text-mute);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.taskRow.done .taskCheck {
+  background: var(--red-sharingan);
+  border-color: var(--red-flame);
+  box-shadow: 0 0 8px var(--red-glow);
+}
+
+.taskRow.done .taskCheck::after {
+  content: '';
+  position: absolute;
+  width: 5px; height: 9px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.taskName {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  color: var(--text-bone);
+}
+
+.taskRow.done .taskName {
+  color: var(--text-mute);
+  text-decoration: line-through;
+}
+
+.taskJp {
+  font-family: var(--font-jp);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.taskPoints {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-chakra);
+  font-variant-numeric: tabular-nums;
+}

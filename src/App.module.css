@@ -1,0 +1,79 @@
+.app {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 56px 1fr;
+  overflow: hidden;
+}
+
+/* ── Desktop layout ── */
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr 340px;
+  gap: 0;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.panelLeft {
+  border-right: 1px solid var(--border-dim);
+  background: linear-gradient(180deg, rgba(15, 5, 5, 0.6), rgba(5, 3, 3, 0.2));
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.panelLeft::-webkit-scrollbar { display: none; }
+
+.panelCenter {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.panelRight {
+  border-left: 1px solid var(--border-dim);
+  background: linear-gradient(180deg, rgba(15, 5, 5, 0.6), rgba(5, 3, 3, 0.2));
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  min-height: 0;
+}
+
+.panelRight::-webkit-scrollbar { display: none; }
+
+/* ── Mobile layout ── */
+.mobileContent {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.mobileTab {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding-bottom: 64px;
+}
+
+.mobileTab::-webkit-scrollbar { display: none; }
+
+.mobilePad {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100%;
+}

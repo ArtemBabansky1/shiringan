@@ -1,0 +1,62 @@
+@keyframes blink {
+  50% { opacity: 0.25; }
+}
+
+@keyframes chakraPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes tomoeSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes tomoeSpinRev {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes todayPulse {
+  0%, 100% { box-shadow: 0 0 12px var(--red-glow), inset 0 0 12px rgba(220,38,38,0.15); }
+  50% { box-shadow: 0 0 20px var(--red-flame), inset 0 0 16px rgba(220,38,38,0.25); }
+}
+
+@keyframes currentPulse {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(12px); }
+}
+
+@keyframes burst {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes stageFlash {
+  0% { opacity: 0; transform: scale(0.5); }
+  30% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+.tomoe-rotate {
+  transform-origin: 100px 100px;
+  animation: tomoeSpin 24s linear infinite;
+}
+
+.tomoe-rotate-reverse {
+  transform-origin: 100px 100px;
+  animation: tomoeSpinRev 36s linear infinite;
+}

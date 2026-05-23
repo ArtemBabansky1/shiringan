@@ -1,0 +1,33 @@
+.host {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2000;
+  pointer-events: none;
+  align-items: center;
+}
+
+.toast {
+  background: var(--bg-elev);
+  border: 1px solid var(--red-sharingan);
+  padding: 9px 18px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-bone);
+  box-shadow: 0 0 20px var(--red-glow);
+  white-space: nowrap;
+}
+
+.upgrade {
+  border-color: var(--gold-chakra);
+  box-shadow: 0 0 30px rgba(212,160,23,0.5), 0 0 60px var(--red-glow);
+  color: var(--gold-chakra);
+  font-size: 13px;
+}

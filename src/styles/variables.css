@@ -1,0 +1,26 @@
+:root {
+  /* Typography */
+  --font-display: 'Stalinist One', serif;
+  --font-body: 'Vela Sans', sans-serif;
+  --font-jp: 'Noto Serif JP', serif;
+
+  /* Colors */
+  --bg-void: #050303;
+  --bg-deep: #0c0606;
+  --bg-card: #110909;
+  --bg-elev: #1a0d0d;
+  --border-dim: #2a1414;
+  --border-bright: #4a1f1f;
+  --red-blood: #8b0a0a;
+  --red-sharingan: #c41e1e;
+  --red-flame: #ff2d2d;
+  --red-glow: rgba(220, 38, 38, 0.55);
+  --gold-chakra: #d4a017;
+  --gold-soft: #b8860b;
+  --purple-rinne: #6b2d8a;
+  --purple-glow: rgba(139, 92, 246, 0.6);
+  --text-bone: #e8dfd0;
+  --text-mute: #8a7670;
+  --text-dim: #5a4540;
+  --blue-coder: #3b82f6;
+}

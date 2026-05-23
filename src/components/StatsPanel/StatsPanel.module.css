@@ -1,0 +1,126 @@
+.panel {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  padding: 12px 14px;
+  position: relative;
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 30px; height: 1px;
+  background: var(--red-sharingan);
+}
+
+.header {
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--text-mute);
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── StatBar ── */
+.statBar { width: 100%; }
+
+.statBarHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.statBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+  color: var(--text-mute);
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.statJp {
+  font-family: var(--font-jp);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.statValue {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-bone);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  text-align: right;
+}
+
+.statMax {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.statTrack {
+  position: relative;
+  height: 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border-dim);
+  overflow: hidden;
+}
+
+.statFill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--stat-color) 60%, transparent), var(--stat-color));
+  box-shadow: 0 0 8px var(--stat-color);
+  transition: width 0.1s;
+}
+
+.statFill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: var(--stat-color);
+  box-shadow: 0 0 10px var(--stat-color);
+}
+
+.auraFill {
+  background: linear-gradient(90deg, var(--red-blood) 0%, var(--gold-chakra) 50%, var(--purple-rinne) 100%);
+  box-shadow: 0 0 10px rgba(212,160,23,0.5);
+}
+
+.auraFill::after {
+  background: var(--gold-chakra);
+  box-shadow: 0 0 14px var(--gold-chakra);
+}
+
+.auraSparks {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,160,23,0.3) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
