@@ -1,10 +1,16 @@
 .block {
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
   padding: 12px 14px;
   position: relative;
-  flex-shrink: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
+
+.block::-webkit-scrollbar { display: none; }
 
 .block::before {
   content: '';
@@ -71,6 +77,7 @@
   padding: 8px 10px;
   background: var(--bg-deep);
   border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s, transform 0.15s;
   user-select: none;

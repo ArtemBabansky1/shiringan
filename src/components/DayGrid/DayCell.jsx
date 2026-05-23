@@ -43,7 +43,7 @@ const DayCell = memo(function DayCell({ dayIdx, isMobile, style }) {
       className={cls.join(' ')}
       onClick={handleClick}
       title={`${formatDate(d)} · ${WEEKDAY_RU[dow]}`}
-      style={{ zIndex: isToday ? 100 : row + 1, ...style }}
+      style={{ zIndex: isToday ? 100 : Math.max(1, 50 - row), ...style }}
     >
       <div className={styles.dayNum}>{dayIdx + 1}</div>
       <div className={styles.dayDots}>

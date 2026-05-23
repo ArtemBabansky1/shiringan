@@ -2,6 +2,7 @@
   width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
   padding: 12px 14px;
   position: relative;
 }

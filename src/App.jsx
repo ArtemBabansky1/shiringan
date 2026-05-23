@@ -18,8 +18,10 @@ function DesktopLayout() {
   return (
     <main className={styles.main}>
       <aside className={styles.panelLeft}>
-        <SharinganDisplay />
-        <StatsPanel />
+        <div className={styles.panelLeftTop}>
+          <SharinganDisplay />
+          <StatsPanel />
+        </div>
         <ProgressBlock />
       </aside>
 

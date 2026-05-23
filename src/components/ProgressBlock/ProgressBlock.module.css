@@ -8,6 +8,7 @@
 .stat {
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
   padding: 10px 8px;
   text-align: center;
   position: relative;

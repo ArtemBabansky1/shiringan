@@ -7,7 +7,7 @@ const STAT_CONFIG = [
   { key: 'power',    label: 'СИЛА',      jp: '力',  color: 'var(--red-flame)',    icon: <Swords size={14}/> },
   { key: 'mental',   label: 'МЕНТАЛКА',  jp: '心',  color: 'var(--purple-rinne)', icon: <Brain size={14}/> },
   { key: 'designer', label: 'ДИЗАЙНЕР',  jp: '美',  color: 'var(--gold-chakra)',  icon: <Palette size={14}/> },
-  { key: 'coder',    label: 'НЕСРТУАЛЬЩИК', jp: '術', color: 'var(--blue-coder)', icon: <Code2 size={14}/> },
+  { key: 'coder',    label: 'ВЕРСТАЛЬЩИК', jp: '術', color: 'var(--blue-coder)', icon: <Code2 size={14}/> },
   { key: 'aura',     label: 'АУРА',      jp: '気',  color: 'var(--red-flame)',    icon: <Sparkles size={14}/> },
 ];
 

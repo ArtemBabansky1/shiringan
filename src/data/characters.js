@@ -230,7 +230,7 @@ export function characterPortraitSVG(ch) {
 }
 
 export const CHARACTERS = {
-  madara:     { id: 'madara',     name: 'Мадара Учиха',       jp: 'うちはマダラ',       title: 'Призрак клана Учиха',         kanji: '魔', clan: 'uchiha',   color: '#c41e1e', image: '/characters/madara.jpg' },
+  madara:     { id: 'madara',     name: 'Мадара Учиха',       jp: 'うちはマダラ',       title: 'Призрак клана Учиха',         kanji: '魔', clan: 'uchiha',   color: '#c41e1e', image: '/characters/madara.png' },
   itachi:     { id: 'itachi',     name: 'Итачи Учиха',        jp: 'うちはイタチ',       title: 'Тень Конохи',                 kanji: '炎', clan: 'uchiha',   color: '#8b0a0a', image: '/characters/itachi.jpg' },
   naruto:     { id: 'naruto',     name: 'Наруто Узумаки',     jp: 'うずまきナルト',     title: 'Хокагэ Конохи',               kanji: '渦', clan: 'leaf',     color: '#f97316', image: '/characters/naruto.jpg' },
   sasuke:     { id: 'sasuke',     name: 'Саске Учиха',        jp: 'うちはサスケ',       title: 'Последний из Учиха',          kanji: '雷', clan: 'uchiha',   color: '#3a2a5a', image: '/characters/sasuke.jpg' },

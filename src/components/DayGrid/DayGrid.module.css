@@ -65,6 +65,7 @@
 .dayCell {
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
   padding: 5px 4px 4px;
   display: flex;
   flex-direction: column;
@@ -97,9 +98,10 @@
 .dayCell:hover::before { opacity: 0.3; }
 
 .dayCell.future {
-  opacity: 0.45;
   cursor: not-allowed;
 }
+.dayCell.future .dayNum { opacity: 0.35; }
+.dayCell.future .dayDots { opacity: 0.35; }
 .dayCell.future:hover { transform: none; border-color: var(--border-dim); z-index: inherit !important; }
 .dayCell.future:hover::before { opacity: 0; }
 
@@ -137,7 +139,7 @@
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 13px;
-  color: var(--text-bone);
+  color: #343434;
   line-height: 1;
   position: relative;
   z-index: 1;

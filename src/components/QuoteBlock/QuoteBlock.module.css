@@ -1,68 +1,42 @@
 .block {
-  background: linear-gradient(135deg, rgba(30, 10, 10, 0.6), rgba(10, 5, 5, 0.4));
-  border: 1px solid var(--border-bright);
-  padding: 14px;
-  flex: 1;
+  background: linear-gradient(180deg, rgba(10, 5, 5, 0.95), rgba(8, 4, 4, 0.98));
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-block);
+  flex: 0 0 50vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  min-height: 0;
 }
 
-.glowCorner {
-  position: absolute;
-  top: -40px; right: -40px;
-  width: 120px; height: 120px;
-  background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
-  filter: blur(10px);
-  pointer-events: none;
-}
-
-.content {
+/* Full-height flex wrapper (motion.div) */
+.inner {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   height: 100%;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Portrait */
-.portrait {
-  width: 72px;
-  height: 72px;
-  border: 1px solid var(--red-blood);
-  background: var(--bg-elev);
+/* Portrait section — top portion */
+.portraitSection {
+  width: 100%;
+  flex: 0 0 55%;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
+  border-radius: var(--radius-block) var(--radius-block) 0 0;
 }
 
-.portrait::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 14px rgba(0,0,0,0.7);
-  pointer-events: none;
-  z-index: 3;
-}
-
-.portraitSvg {
+.portraitFallbackSvg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
 }
 
-.portraitSvg svg {
+.portraitFallbackSvg svg {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .portraitImg {
@@ -72,80 +46,82 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: contrast(1.05) saturate(0.85) brightness(0.9);
-  z-index: 2;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
 }
 
 .portraitImg.loaded {
   opacity: 1;
 }
 
-/* Character info */
-.charInfo {
+/* Bottom info area */
+.infoArea {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 10px 14px 10px;
+  min-height: 0;
+}
+
+/* Character meta — name/jp/title */
+.charMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2px;
-  min-width: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-dim);
 }
 
 .charName {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.14em;
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.1em;
   color: var(--text-bone);
-  text-transform: uppercase;
+  text-align: center;
 }
 
 .charJp {
   font-family: var(--font-jp);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--red-sharingan);
+  letter-spacing: 0.05em;
 }
 
 .charTitle {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-mute);
+  text-align: center;
 }
 
-/* Quote */
+/* Quote text */
 .quoteText {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--text-bone);
-  position: relative;
-  padding-left: 18px;
   flex: 1;
+  padding: 8px 0 6px;
+  text-align: center;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
-.quoteText::before {
-  content: '«';
-  position: absolute;
-  left: -4px;
-  top: -4px;
-  font-size: 38px;
-  font-family: var(--font-jp);
-  color: var(--red-blood);
-  line-height: 1;
-  opacity: 0.7;
-}
-
+/* Footer */
 .quoteMeta {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--border-dim);
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
   font-family: var(--font-body);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-mute);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   font-variant-numeric: tabular-nums;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-dim);
 }

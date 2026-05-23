@@ -55,7 +55,7 @@ export default function Header() {
       <header className={styles.header}>
         <div className={styles.headerLeft}>
           <span className={styles.brandJp}>写輪眼</span>
-          {!isMobile && <span className={styles.brandEn}>100 Sharingan</span>}
+          {!isMobile && <span className={styles.brandEn}>Путь шиноби</span>}
         </div>
 
         <Timer />
