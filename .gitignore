@@ -10,7 +10,13 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+dist-electron
 *.local
+
+# Dev log files
+dev_err.txt
+dev_out.txt
+electron_out.txt
 
 # Editor directories and files
 .vscode/*

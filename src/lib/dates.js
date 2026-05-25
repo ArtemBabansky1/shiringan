@@ -1,4 +1,4 @@
-export const START_DATE = new Date(2026, 4, 23, 20, 50, 0); // 25 May 2026
+export const START_DATE = new Date(2026, 4, 25, 0, 0, 0); // 25 May 2026
 export const TOTAL_DAYS = 100;
 export const STORAGE_KEY = 'sharingan100_v2';
 

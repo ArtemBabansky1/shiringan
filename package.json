@@ -1,25 +1,57 @@
 {
   "name": "sharingan-100",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "main": "electron/main.cjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:dev": "node scripts/electron-env.cjs",
+    "electron:build": "vite build && electron-builder"
   },
   "dependencies": {
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.0.0",
+    "framer-motion": "^11.0.0",
+    "gsap": "^3.12.5",
+    "lucide-react": "^0.400.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "gsap": "^3.12.5",
-    "framer-motion": "^11.0.0",
-    "lucide-react": "^0.400.0",
-    "tone": "^15.0.0",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.0.0"
+    "tone": "^15.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",
-    "vite": "^5.3.0"
+    "concurrently": "^8.2.0",
+    "cross-env": "^10.1.0",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.0",
+    "electron-vite": "^5.0.0",
+    "vite": "^5.3.0",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "ru.sharingan.100days",
+    "productName": "Sharingan 100 Days",
+    "icon": "build/Sharingan_triple.ico",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/Sharingan_triple.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
   }
 }
