@@ -33,7 +33,7 @@
   "build": {
     "appId": "ru.sharingan.100days",
     "productName": "Sharingan 100 Days",
-    "icon": "build/Sharingan_triple.ico",
+    "icon": "build/favicon.ico",
     "directories": {
       "output": "dist-electron"
     },
@@ -43,7 +43,7 @@
       "package.json"
     ],
     "win": {
-      "icon": "build/Sharingan_triple.ico",
+      "icon": "build/favicon.ico",
       "target": [
         {
           "target": "portable",
