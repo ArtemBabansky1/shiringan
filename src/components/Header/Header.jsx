@@ -1,21 +1,25 @@
 import { useState } from 'react';
-import { Volume2, VolumeX, Download, Upload, RotateCcw, Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Volume2, VolumeX, Download, Upload, RotateCcw, Menu, X, Settings, LogOut } from 'lucide-react';
 import { useApp } from '../../context/AppContext.jsx';
-import { setMuted, getMuted } from '../../lib/sounds.js';
+import { useAuth } from '../../context/AuthContext.jsx';
+import { setMuted } from '../../lib/sounds.js';
 import { useMediaQuery } from '../../hooks/useMediaQuery.js';
 import Timer from './Timer.jsx';
 import Modal from '../Modal/Modal.jsx';
 import styles from './Header.module.css';
 
 export default function Header() {
-  const { muted, setMuted: setMutedCtx, todayIdx, setSelectedDay, addToast, exportData, importData, resetAll } = useApp();
+  const { muted, setMuted: setMutedCtx, todayIdx, setSelectedDay, addToast, exportData, importData, resetAll, TOTAL_DAYS } = useApp();
+  const { logout } = useAuth();
+  const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [menuOpen, setMenuOpen] = useState(false);
-  const [modal, setModal] = useState(null); // { type: 'export'|'import', data }
+  const [modal, setModal] = useState(null);
 
   function handleGoToday() {
     if (todayIdx < 0) { addToast('Путь ещё не начался'); return; }
-    if (todayIdx >= 100) { addToast('Путь завершён'); return; }
+    if (todayIdx >= TOTAL_DAYS) { addToast('Путь завершён'); return; }
     setSelectedDay(todayIdx);
   }
 
@@ -47,6 +51,8 @@ export default function Header() {
       <button className={styles.btn} onClick={handleExport}><Download size={13}/> Экспорт</button>
       <button className={styles.btn} onClick={handleImport}><Upload size={13}/> Импорт</button>
       <button className={`${styles.btn} ${styles.btnDanger}`} onClick={handleReset}><RotateCcw size={13}/> Сброс</button>
+      <button className={styles.btn} onClick={() => { navigate('/settings'); setMenuOpen(false); }}><Settings size={13}/></button>
+      <button className={styles.btn} onClick={() => { logout(); setMenuOpen(false); }}><LogOut size={13}/></button>
     </>
   );
 

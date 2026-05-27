@@ -1,10 +1,10 @@
 import { useApp } from '../../context/AppContext.jsx';
-import { dateForDay, WEEKDAY_RU, formatDate } from '../../lib/dates.js';
+import { WEEKDAY_RU, formatDate } from '../../lib/dates.js';
 import TaskRow from './TaskRow.jsx';
 import styles from './TaskList.module.css';
 
 export default function TaskList() {
-  const { selectedDay, todayIdx, getTasksForDay } = useApp();
+  const { selectedDay, todayIdx, getTasksForDay, TOTAL_DAYS, cfg } = useApp();
 
   if (selectedDay === null || selectedDay === undefined) {
     return (
@@ -14,7 +14,8 @@ export default function TaskList() {
     );
   }
 
-  const d = dateForDay(selectedDay);
+  const dateForDay = cfg?.dateForDay;
+  const d = dateForDay ? dateForDay(selectedDay) : new Date();
   const dow = d.getDay();
   const tasks = getTasksForDay(selectedDay);
   const isFuture = selectedDay > todayIdx;
@@ -24,7 +25,7 @@ export default function TaskList() {
     <div className={styles.block}>
       <div className={styles.header}>
         <div className={styles.date}>{WEEKDAY_RU[dow]}, {formatDate(d)}</div>
-        <div className={styles.dayNum}>День {selectedDay + 1} / 100{isToday ? ' · сегодня' : ''}</div>
+        <div className={styles.dayNum}>День {selectedDay + 1} / {TOTAL_DAYS}{isToday ? ' · сегодня' : ''}</div>
       </div>
 
       {tasks.length === 0 ? (
