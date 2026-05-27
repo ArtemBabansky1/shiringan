@@ -8,10 +8,10 @@ export function AuthProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getMe().then(({ data }) => {
-      setUser(data?.user ?? null);
-      setIsLoading(false);
-    });
+    getMe()
+      .then(({ data }) => { setUser(data?.user ?? null); })
+      .catch(() => { setUser(null); })
+      .finally(() => { setIsLoading(false); });
   }, []);
 
   async function login(email, password) {

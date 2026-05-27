@@ -1,6 +1,14 @@
-import { apiGet, apiPost } from './client.js';
+import { apiGet, apiPost, initCsrf } from './client.js';
 
-export const getMe       = ()                   => apiGet('/auth/me');
-export const register    = (email, password)    => apiPost('/auth/register', { email, password });
-export const login       = (email, password)    => apiPost('/auth/login',    { email, password });
-export const logout      = ()                   => apiPost('/auth/logout');
+export const getMe = () => apiGet('/auth/me');
+export const logout = () => apiPost('/auth/logout');
+
+export async function login(email, password) {
+  await initCsrf();
+  return apiPost('/auth/login', { email, password });
+}
+
+export async function register(email, password) {
+  await initCsrf();
+  return apiPost('/auth/register', { email, password });
+}
